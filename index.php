@@ -52,36 +52,34 @@
 ];
     ?>
 
-    <head>
-        <form>
-            <span>Filtra alberghi che hanno il parcheggio:</span>
-            <input type="checkbox" name="parcheggio" id=""> <br>
-            <span>Filtra alberghi che hanno voto superiore a 2:</span>
-            <input type="checkbox" name="voto" id=""> <br>
-            <input type="submit" value="Filtra">
-        </form>
-    </head>
 
     <main>
-        <?php
-            foreach($hotels as $hotel){
-            $name = $hotel["name"];
-            $description = $hotel["description"];
-            $parking = $hotel["parking"];
-            $vote = $hotel["vote"];
-            $distance_to_center = $hotel["distance_to_center"];
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">nome</th>
+                <th scope="col">Descrizione</th>
+                <th scope="col">Parcheggio</th>
+                <th scope="col">Voto</th>
+                <th scope="col">Distanza dal centro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                foreach ($hotels as $hotel) {
+                    echo "<tr></tr>";
 
-            echo "
-            <div>
-                <h1> $name </h1>
-                 <p> descizione: $description</p>
-                <div>voto: $vote</div>
-                <div>voto: distanza dal centro: $distance_to_center</div>
-            </div>
-            ";
+                    foreach($hotel as $key => $valore){
+                        echo "<td>$valore</td>";
+                    };
+                
             }
-        ?>
+            ?>
+        </tbody>
+    </table>
     </main>
+
+    
 
    
     
