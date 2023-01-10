@@ -50,6 +50,29 @@
 
 ];
     ?>
+
+    <main>
+        <?php
+            foreach($hotels as $hotel){
+            $name = $hotel["name"];
+            $description = $hotel["description"];
+            $parking = $hotel["parking"];
+            $vote = $hotel["vote"];
+            $distance_to_center = $hotel["distance_to_center"];
+
+            echo "
+            <div>
+                <h1> $name </h1>
+                 <p> descizione: $description</p>
+                <div>voto: $vote</div>
+                <div>voto: distanza dal centro: $distance_to_center</div>
+            </div>
+            ";
+            }
+        ?>
+    </main>
+
+   
     
 </body>
 </html>
